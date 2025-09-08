@@ -1,2 +1,2 @@
 # Advocracy
-Case management platform for lawyer
+Platform for lawyer
