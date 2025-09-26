@@ -1,5 +1,29 @@
-function Addclient()
+import { useState } from "react";
+function Addclient({ setuserdata })
 {
+
+  const [firstname,setfirstname]=useState("");
+  const [lastname,setlastname]=useState("");
+  const [casetype,setcasetype]=useState('');
+  const [gender,setgender]=useState('');
+  const [dob,setdob]=useState('');
+  const [phone,setphone]=useState('');
+  const [address,setaddress]=useState('');
+
+
+  const handledata=()=>{
+
+    setuserdata(prev => [...prev, { id: Date.now(), name: `${firstname} ${lastname}`, firstname, lastname, casetype, gender, dob, phone, address }]);
+       setfirstname('');
+       setlastname('');
+       setcasetype('');
+       setgender('');
+       setdob('');
+       setphone('');
+       setaddress('');
+  }
+
+
     return(
         <>
 
@@ -89,15 +113,15 @@ function Addclient()
             <h1 style={{textAlign:"center",marginTop:"10px",marginBottom:"10px"}}>Add client</h1>
             <hr />
             <form action=""  >
-               <div id="name" style={{display:"flex",flexDirection:"column"}}>
+               <div id="name"  style={{display:"flex",flexDirection:"column"}}>
                    <div style={{display:"flex",flexDirection:"row"}}>
                     <div>
                         <label htmlFor="fname">First Name</label>
-                        <input type="text" id="fname" placeholder="Enter First name" />
+                        <input onChange={(e)=>setfirstname(e.target.value)} type="text" id="fname" placeholder="Enter First name" />
                     </div>
                     <div id="Typeofcase">
                         <label htmlFor="caseType">Case type</label>
-                        <select id="caseType" aria-label="Choose case type" style={{ color:"gray",height:"30px",width:"159px",paddingLeft:"10px",borderRadius:"10px",marginLeft:"15px",marginTop:"20px"}}>
+                        <select onChange={(e)=>setcasetype(e.target.value)} id="caseType" aria-label="Choose case type" style={{ color:"gray",height:"30px",width:"159px",paddingLeft:"10px",borderRadius:"10px",marginLeft:"15px",marginTop:"20px"}}>
                         <option value="" disabled selected>— Select a case type —</option>
                         <option value="criminal">Criminal Cases</option>
                         <option value="civil">Civil Cases</option>
@@ -120,36 +144,36 @@ function Addclient()
 
                     <div>
                         <label htmlFor="lname" style={{marginTop:"10px"}}>Last Name</label>
-                    <input type="text" id="lname" placeholder="Enter last name" />
+                    <input onChange={(e)=>setlastname(e.target.value)} type="text" id="lname" placeholder="Enter last name" />
                     </div>
                </div>
 
               
                <div id="gender" style={{display:"flex",flexDirection:"row"}}>
-                 <label htmlFor="">Gender</label>
-                   <input type="radio" name="gender" id="male" />
+                 <label htmlFor="gender">Gender</label>
+                   <input onChange={(e)=>setgender(e.target.value)} type="radio" name="gender" id="male" />
                    <label htmlFor="male">Male</label>
-                   <input type="radio" name="gender" id="female" />
+                   <input onChange={(e)=>setgender(e.target.value)} type="radio" name="gender" id="female" />
                    <label htmlFor="female">Female</label>
                </div>
 
                <div style={{display:"flex",flexDirection:"row"}}>
                    <label style={{marginTop:"10px"}} htmlFor="">Date of birth</label>
-                   <input type="date" />
+                   <input onChange={(e)=>setdob(e.target.value)} type="date" />
                </div>
 
                <div>
                   <label htmlFor="tel">Phone number</label>
-                  <input type="tel" placeholder="Enter phone number"/>
+                  <input onChange={(e)=>setphone(e.target.value)} type="tel" placeholder="Enter phone number"/>
                </div>
 
                <div style={{marginTop:"30px"}}>
                   <label  htmlFor="Address">Address</label>
-                  <textarea name="Address" id="address" style={{padding:"20px",rows:"10",cols:"60",borderRadius:"10px"}} placeholder="Enter address"></textarea>
+                  <textarea onChange={(e)=>setaddress(e.target.value)} name="Address" id="address" style={{padding:"20px",rows:"10",cols:"60",borderRadius:"10px"}} placeholder="Enter address"></textarea>
                </div>
 
 
-               <button style={{height:"50px",width:"100px",borderRadius:"10px",backgroundColor:"black",color:"white",marginTop:"30px",position:"absolute",right:"20px"}}>Add Client</button>
+               <button onClick={handledata} style={{height:"50px",width:"100px",borderRadius:"10px",backgroundColor:"black",color:"white",marginTop:"30px",position:"absolute",right:"20px"}}>Add Client</button>
                  
                    
 

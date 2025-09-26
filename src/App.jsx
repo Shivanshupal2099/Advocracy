@@ -20,6 +20,11 @@ import Caseshistory from './component/caseshistory'
 import Document from './component/document'
 import Message from './component/message'
 import Status from './component/Status'
+import Casefiled from './component/casefiled'
+import Inprogress from './component/inprogress'
+import Scheduled from './component/Scheduled'
+import Judgement from './component/Judgement'
+import Closed from './component/Closed'
 function App() {
 
 
@@ -55,7 +60,13 @@ function App() {
                           <Route path='caseshistory' element={<Caseshistory/>}/>
                           <Route path='document' element={<Document/>}/>
                           <Route path='message' element={<Message/>}/>
-                          <Route path='status' element={<Status/>}/>
+                          <Route path='status' element={<Status/>}>
+                             <Route path='casefiled' element={<Casefiled/>}/>
+                             <Route path='inprogress' element={<Inprogress/>}/>
+                             <Route path='judgement' element={<Judgement/>}/>
+                             <Route path='scheduled' element={<Scheduled/>}/>
+                             <Route path='closed' element={<Closed/>}/>
+                          </Route>
                      </Route>
 
                      

@@ -20,8 +20,8 @@ function Sidebar()
                 margin-left:30px;
                 border-radius:50px;
                 text-decoration:none;
-                height:22px;
-                width:180px;
+                height:35px;
+                width:200px;
                 border:2px solid gray;
                 display: flex;
                 align-items: center;
@@ -40,7 +40,6 @@ function Sidebar()
                    width:170px;
                    background-color: #000000ff;
                    color:white;
-                   border-radius:10px;
                 }
 
             .navbarstyle.active {

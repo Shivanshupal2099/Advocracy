@@ -46,14 +46,15 @@ function Search() {
         <FaSearch style={{height:"30px",width:"60px",marginTop:"25px"}} />
         <FaFilter onClick={() => setfilter(!filtervalue)} style={{height:"30px",width:"60px",marginTop:"25px"}} />
 
-        {
-          filtervalue ? <Filter  /> : null
-        }
+        
       </div>
        
       <hr />
 
-      <div style={{backgroundImage:`url(${truth})`,height:"300px",backgroundSize:"contain",backgroundPosition:"center",backgroundRepeat:"no-repeat",width:"100%",opacity:0.5,marginTop:"10%"}}>
+      <div style={{backgroundImage:`url(${truth})`,height:"300px",backgroundSize:"contain",backgroundPosition:"center",backgroundRepeat:"no-repeat",width:"100%",opacity:1.5,marginTop:"10%"}}>
+        {
+          filtervalue ? <Filter  /> : null
+        }
       </div>
       
     </>
