@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "id": "2371",
+      "firstName": "SHIVANSHU",
+      "lastName": "PAL",
+      "email": "palshivanshu126@gmail.com",
+      "password": "12345678",
+      "gender": "male"
+    },
+    {
+      "id": "509b",
+      "firstName": "SHIVANSHU",
+      "lastName": "PAL",
+      "email": "",
+      "password": "",
+      "gender": ""
+    },
+    {
+      "id": "d2e1",
+      "firstName": "SHIVANSHU",
+      "lastName": "PAL",
+      "email": "",
+      "password": "",
+      "gender": ""
+    },
+    {
+      "id": "b77a",
+      "firstName": "SHIVANSHU",
+      "lastName": "PAL",
+      "email": "palshivanshu2005@gmail.com",
+      "password": "Shivanshu1999",
+      "gender": "male",
+      "jobtype": ""
+    },
+    {
+      "id": "9c2d",
+      "firstName": "SHIVANSHU",
+      "lastName": "PAL",
+      "email": "palshiva205@gmail.com",
+      "password": "4546546",
+      "gender": "male",
+      "jobtype": "LAWYER"
+    },
+    {
+      "id": "406c",
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "password": "",
+      "gender": "male",
+      "jobtype": ""
+    },
+    {
+      "id": "c643",
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "password": "",
+      "gender": "",
+      "jobtype": ""
+    }
+  ]
+}

@@ -52,7 +52,7 @@ function Search() {
       <hr />
 
       <div style={{backgroundImage:`url(${truth})`,height:"300px",backgroundSize:"contain",backgroundPosition:"center",backgroundRepeat:"no-repeat",width:"100%",opacity:1.5,marginTop:"10%"}}>
-        {
+      {
           filtervalue ? <Filter  /> : null
         }
       </div>

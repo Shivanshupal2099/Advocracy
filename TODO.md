@@ -1,13 +1,10 @@
-# TODO List for Adding Click Feature to NavLink
+# TODO: Fix Issues in src/pages/account.jsx
 
-## Completed Steps:
-- [x] Search for relevant files using search_code.
-- [x] Read the file src/component/Status.jsx to understand the structure.
-- [x] Brainstorm and plan the changes.
-- [x] Add useState import to src/component/Status.jsx.
-- [x] Add state variable isCaseFiledActive and setter.
-- [x] Modify the "Case Filed" NavLink to include onClick handler and dynamic background color style.
-
-## Next Steps:
-- [ ] Test the application by running it and clicking the "Case Filed" NavLink to verify the background changes to green.
-- [ ] Check for any console errors or styling issues.
+- [x] Remove unused `useState` for `usersdata`
+- [x] Fix `createuser` function: correct method to "POST", fix body to JSON.stringify(state), add headers for JSON, improve response handling with try-catch and success alert
+- [x] Update form `onSubmit` to call `createuser` and prevent default
+- [x] Add `type="submit"` to the button
+- [x] Make text inputs controlled by adding `value` props
+- [x] Make radio buttons controlled by adding `checked` props
+- [x] In `createuser`, on success, reset state to initial `useraccount` and alert success
+- [x] Remove redundant `url` redefine in `createuser`

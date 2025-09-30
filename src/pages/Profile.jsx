@@ -75,9 +75,9 @@ function Profile() {
 
                         {/*  edit button */}
                         <div className="edit button" style={{ marginTop: "70px", marginLeft: "100px" }}>
-                            <button onClick={() => seteditpopup(!editpopup)} style={{ height: '40px', width: "150px", backgroundColor: "black", color: "white", borderRadius: "10px" }}>
+                            <button onClick={() => seteditpopup(!editpopup)} style={{ height: '45px', width: "150px", backgroundColor: "#312affff", color: "white", borderRadius: "10px" ,border:"0px solid white"}}>
                                 <h4>Edit</h4></button>
-                            <button onClick={handleaccount} style={{marginLeft:"20px",borderRadius:"10px", height: "40px", width: "150px", backgroundColor: "black", color: "white" }}>Sign out</button>
+                            <button onClick={handleaccount} style={{marginLeft:"20px",borderRadius:"10px", height: "45px", width: "150px", backgroundColor: "#312affff", color: "white",border:"0px solid white" }}>Sign out</button>
 
                         </div>
 

@@ -12,9 +12,25 @@ function Landing()
         
      }, [navi]);
 
+
+      // backgroundColor:"#e7fc74ff"
+
     return(
         <> 
-          
+            <style>
+              {`
+
+                   *{
+                    margin:0;
+                    padding:0;
+                   }
+
+                   body {
+                    background-color: #edf7a1ff;
+                   }
+
+               `}
+            </style>
             <div className="logobox" style={{height:'250px',width:'250px',marginTop:"230px",marginLeft:"650px"}}>
                     <img src={advocracy} alt="Advocracy Logo" style={{height:"250px",width:"250px"}} />
             </div>

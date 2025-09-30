@@ -1,4 +1,6 @@
 import { useState } from "react";
+
+import profilelogo from '../assets/profilelogo.png'
 function Addclient({ setuserdata })
 {
 
@@ -36,17 +38,41 @@ function Addclient({ setuserdata })
                 }
                     .addclient
                     {
-                       border:2px solid gray;
-                       box-shadow:9px 19px 2px  black;
+                       border:15px solid #000000ff;
+                       
                        height:600px;
-                       border-radius:10px;
+                       border-radius:35px;
                        width:900px;
-                       background-color:white;
+                       background-color: #fbfbfbff;
                        position:fixed;
                        left:20%;
-                       top:10%;
+                       top:7%;
                        z-index:2;
                     }
+                       .addclient:hover
+                       {
+                         transform: scale(1.02);
+                         box-shadow:9px 18px 18px #4b6ffeff;
+                         border-radius:30px;
+                         border:15px solid #4b6ffeff;
+                       }
+                         .addclient:hover .heading
+                         {
+                           background-color: #4b6ffeff;
+                           
+                         }
+                         .addclient:hover .heading h1
+                         {
+                           color: black;
+                         }
+                         .heading
+                         {
+                           background-color: #000000ff;
+                         }
+                         .heading h1
+                         {
+                           color: #ffffffff;
+                         }
                        form
                        {
                           margin-top:50px;
@@ -110,7 +136,10 @@ function Addclient({ setuserdata })
         </style>
 
          <div  className="addclient">
-            <h1 style={{textAlign:"center",marginTop:"10px",marginBottom:"10px"}}>Add client</h1>
+          <div className="heading" style={{height:"70px",borderRadius:"10px 10px 0px 0px"}}>
+                        <h1 style={{textAlign:"center",paddingTop:"20px",marginTop:"0px",marginBottom:"10px"}}>Add client</h1>
+
+            </div>   
             <hr />
             <form action=""  >
                <div id="name"  style={{display:"flex",flexDirection:"column"}}>
@@ -148,33 +177,46 @@ function Addclient({ setuserdata })
                     </div>
                </div>
 
-              
-               <div id="gender" style={{display:"flex",flexDirection:"row"}}>
-                 <label htmlFor="gender">Gender</label>
-                   <input onChange={(e)=>setgender(e.target.value)} type="radio" name="gender" id="male" />
-                   <label htmlFor="male">Male</label>
-                   <input onChange={(e)=>setgender(e.target.value)} type="radio" name="gender" id="female" />
-                   <label htmlFor="female">Female</label>
-               </div>
+             <div style={{display:"flex",flexDirection:"row"}}>
+                        <div>
+                          
+                                    <div id="gender" style={{display:"flex",flexDirection:"row"}}>
+                                      <label htmlFor="gender">Gender</label>
+                                        <input onChange={(e)=>setgender(e.target.value)} type="radio" name="gender" id="male" />
+                                        <label htmlFor="male">Male</label>
+                                        <input onChange={(e)=>setgender(e.target.value)} type="radio" name="gender" id="female" />
+                                        <label htmlFor="female">Female</label>
+                                    </div>
 
-               <div style={{display:"flex",flexDirection:"row"}}>
-                   <label style={{marginTop:"10px"}} htmlFor="">Date of birth</label>
-                   <input onChange={(e)=>setdob(e.target.value)} type="date" />
-               </div>
+                                    <div style={{display:"flex",flexDirection:"row"}}>
+                                        <label style={{marginTop:"10px"}} htmlFor="">Date of birth</label>
+                                        <input onChange={(e)=>setdob(e.target.value)} type="date" />
+                                    </div>
 
-               <div>
-                  <label htmlFor="tel">Phone number</label>
-                  <input onChange={(e)=>setphone(e.target.value)} type="tel" placeholder="Enter phone number"/>
-               </div>
+                                    <div>
+                                        <label htmlFor="tel">Phone number</label>
+                                        <input onChange={(e)=>setphone(e.target.value)} type="tel" placeholder="Enter phone number"/>
+                                    </div>
 
-               <div style={{marginTop:"30px"}}>
-                  <label  htmlFor="Address">Address</label>
-                  <textarea onChange={(e)=>setaddress(e.target.value)} name="Address" id="address" style={{padding:"20px",rows:"10",cols:"60",borderRadius:"10px"}} placeholder="Enter address"></textarea>
-               </div>
+                                    <div style={{marginTop:"30px"}}>
+                                        <label  htmlFor="Address">Address</label>
+                                        <textarea onChange={(e)=>setaddress(e.target.value)} name="Address" id="address" style={{padding:"20px",rows:"10",cols:"60",borderRadius:"10px"}} placeholder="Enter address"></textarea>
+                                    </div>
+                        </div>
+                      <div style={{marginLeft:"200px",marginTop:"20px"}}>
 
+                            <div style={{ border: "7px solid black", height: "200px", width: "200px", borderRadius: "100px", backgroundImage: `url(${profilelogo})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                            
+                            </div>
+                            <p style={{ marginTop: "9px",marginLeft:"20px" }}><b>Upload profile image</b></p>
 
-               <button onClick={handledata} style={{height:"50px",width:"100px",borderRadius:"10px",backgroundColor:"black",color:"white",marginTop:"30px",position:"absolute",right:"20px"}}>Add Client</button>
+                            
+                             <button onClick={handledata} style={{height:"53px",width:"120px",borderRadius:"60px",backgroundColor:"#ffff4bff",color:"black",marginTop:"30px",position:"absolute",right:"180px",border:"4px solid black"}}>Add Client</button>
                  
+                            
+                          
+                      </div>
+             </div>
                    
 
                
