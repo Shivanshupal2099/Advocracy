@@ -1,6 +1,7 @@
 import { IoIosAddCircle } from "react-icons/io";
 import { useState, useEffect } from "react";
 import Addclient from "./addclient";
+import './homesidebar.css';
 
 function Homesidebar({ onClientSelect }) {
 
@@ -27,8 +28,11 @@ function Homesidebar({ onClientSelect }) {
 
     return (
         <>
+
+
+
             {addclient && <Addclient setuserdata={setuserdata} />}
-            <div style={{ height: "100vh", width: "390px", borderRadius: "10px", border: "1px solid #f1f1f1ff", backgroundColor: "#f0f0f0ff", marginLeft: "-40px", display: "flex", flexDirection: "column" }}>
+            <div style={{ height: "100vh", width: "340px", borderRadius: "10px", border: "1px solid #f1f1f1ff", backgroundColor: "#EDEDED", marginLeft: "-40px", display: "flex", flexDirection: "column" }}>
                 <div style={{position:"sticky"}}>
                     <h2 style={{ marginLeft: "20px", marginTop: "30px" }}>Clients Overview</h2>
                 <div style={{ display: "flex", flexDirection: "row" }}>
@@ -36,7 +40,7 @@ function Homesidebar({ onClientSelect }) {
                     <IoIosAddCircle onClick={toggleAddClient} style={{ height: "40px", width: "40px", marginLeft: "5px", marginTop: "20px" }} />
                 </div>
                 <div style={{ display: "flex", flexDirection: "row" }}>
-                    <select id="caseType" aria-label="Choose case type" style={{ color: "gray", height: "30px", width: "159px", paddingLeft: "10px", borderRadius: "10px", marginLeft: "15px", marginTop: "20px" }}>
+                    <select id="caseType" aria-label="Choose case type" style={{ color: "gray", height: "50px", width: "149px", paddingLeft: "10px", borderRadius: "10px", marginLeft: "15px", marginTop: "20px" }}>
                         <option value="" disabled selected>— Select a case type —</option>
                         <option value="criminal">Criminal Cases</option>
                         <option value="civil">Civil Cases</option>
@@ -55,9 +59,9 @@ function Homesidebar({ onClientSelect }) {
                         <option value="cybercrime">Cybercrime / Digital Law Cases</option>
                     </select>
 
-                    <select id="caseStatus" style={{ color: "gray", height: "30px", width: "159px", paddingLeft: "5px", borderRadius: "10px", marginLeft: "5px", marginTop: "20px" }}>
-                        <option value="" disabled selected>— Choose Status —</option>
-                        <option value="filed">Filed / Registered</option>
+                    <select id="caseStatus" style={{ color: "gray", height: "50px", width: "159px", paddingLeft: "5px", borderRadius: "10px", marginLeft: "5px", marginTop: "20px" }}>
+                        <option  value="" disabled selected>— Choose Status —</option>
+                        <option  value="filed">Filed / Registered</option>
                         <option value="scrutiny">Under Scrutiny</option>
                         <option value="pending">Pending</option>
                         <option value="hearing">Listed for Hearing</option>
@@ -76,33 +80,40 @@ function Homesidebar({ onClientSelect }) {
                 <div style={{overflow:"auto"}}>
                     
 
-                {
+                { 
                     userdata.map((items, index) => (
-                        <div
+                        <div className="clientbox"
                             key={index}
                             onClick={() => handleClientClick(items)}
                             style={{
                                 display: "flex",
                                 flexDirection: "row",
-                                border: "1px solid gray",
-                                backgroundColor: "white",
-                                borderRadius: "50px",
-                                marginTop: "20px",
-                                marginLeft: "5px",
+                                borderRadius: "12px",
+                                marginTop: "25px",
+                                marginLeft: "12px",
                                 marginRight: "5px",
-                                height: "90px",
+                                height: "80px",
                                 color:"black",
-                                width: "349px",
-                                cursor: "pointer"
+                                width: "300px",
+                                cursor: "pointer",
                             }}
                         >
-                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhY2h8ZW58MHx8MHx8&w=1000&q=80" style={{ marginLeft: "19px", marginTop: "15px", height: "60px", width: "60px", borderRadius: "90px", border: "1px solid gray" }} alt="clientimage" />
-                            <div style={{ display: "flex", flexDirection: "row" }}>
-                                <div style={{ marginTop: "25px", marginLeft: "20px", display: "flex", flexDirection: "column" }}>
-                                    <h3>{items.firstname}</h3>
-                                </div>
-                                <p style={{ height: "15px", border: "1px solid #ffe205ff", backgroundColor: "#ffee00ff", borderRadius: "50px", padding: "5px", paddingBottom: "8px", marginTop: "25px", marginLeft: "25px" }}>Active Client</p>
+                            <div >
+                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhY2h8ZW58MHx8MHx8&w=1000&q=80" style={{  marginTop: "10px", height: "60px", width: "60px", borderRadius: "90px", border: "1px solid gray",marginLeft:"10px" }} alt="clientimage" />
+
                             </div>
+                            <div style={{width:"170px"}}>
+
+                                 <h3 style={{textAlign:"center",marginTop:"25px" }}>{items.firstname}</h3>
+
+                            </div>
+                            <div style={{width:"50px",marginLeft:"1px"}}>
+
+                                <div style={{ boxShadow:"4px 7px 5px #2BFF29" ,marginTop:"25px",marginLeft:"18px",width:"0px",padding:"4px",borderRadius:"50px"}}></div>
+
+                            </div>
+                            
+                            
                         </div>
                     ))
                 }
@@ -112,4 +123,19 @@ function Homesidebar({ onClientSelect }) {
     );
 }
 
+
 export default Homesidebar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

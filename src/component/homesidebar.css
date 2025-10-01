@@ -1,0 +1,11 @@
+.clientbox:hover {
+    box-shadow: 3px 9px 1px #32FF21;
+    border: 1px solid #32FF21;
+    background-color: #FFEB00;
+}
+.clientbox
+{
+    background-color: white;
+}
+
+
