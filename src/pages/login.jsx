@@ -20,7 +20,7 @@ function Login()
             padding:0;
             }
             body{
-                 background-color:#38ff81ff;
+                 background-color: #edf7a1ff;
             }
             .box{
               margin-left:620px;

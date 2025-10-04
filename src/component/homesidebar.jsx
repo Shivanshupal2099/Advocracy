@@ -32,7 +32,7 @@ function Homesidebar({ onClientSelect }) {
 
 
             {addclient && <Addclient setuserdata={setuserdata} />}
-            <div style={{ height: "100vh", width: "340px", borderRadius: "10px", border: "1px solid #f1f1f1ff", backgroundColor: "#EDEDED", marginLeft: "-40px", display: "flex", flexDirection: "column" }}>
+            <div style={{ height: "95vh", width: "340px", borderRadius: "10px", border: "1px solid #f1f1f1ff", backgroundColor: "#EDEDED", marginLeft: "-40px", display: "flex", flexDirection: "column" }}>
                 <div style={{position:"sticky"}}>
                     <h2 style={{ marginLeft: "20px", marginTop: "30px" }}>Clients Overview</h2>
                 <div style={{ display: "flex", flexDirection: "row" }}>

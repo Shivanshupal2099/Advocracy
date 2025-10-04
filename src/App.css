@@ -1,0 +1,41 @@
+.app-layout {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #f33333ff;
+  padding: 10px;
+}
+
+.logo {
+  height: 80px;
+  width: 80px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.sidebar {
+  height: 80vh;
+  border-radius: 30px;
+  border: 1px solid #F7F7F7;
+  background-color: #F7F7F7;
+  padding: 10px;
+}
+
+.main-content {
+  height: 80vh;
+  border-radius: 25px;
+  overflow: auto;
+  padding: 20px;
+  background-color: #fff;
+}

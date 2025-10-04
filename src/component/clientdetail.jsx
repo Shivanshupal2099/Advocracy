@@ -1,26 +1,74 @@
-import verified from '../assets/verified.png'
 import truth from '../assets/truth.png'
-import signature from '../assets/signature.png'
-import fingerprint from '../assets/fingerprint.png'
 import { GoDotFill } from "react-icons/go";
-
+import legallogo from '../assets/legallogo.png'
+import profilelogo from '../assets/profilelogo.png'
 function Clientdetail()
 {
     return(
+
+
         <>
-             <div style={{height:"700px",width:"790px",borderRadius:"30px",border:"1px solid #F7F7F7",backgroundColor:"#ffffffff",position:"fixed"}} >
+
+
+          <style>
+            {
+                `
+                   .card {
+                     border: 7px solid black;
+                   }
+
+                  
+                     
+
+                `
+            }
+          </style>
+             <div style={{height:"700px",width:"810px",borderRadius:"30px",border:"1px solid #F7F7F7",backgroundColor:"#ffffffff",position:"fixed"}} >
                      <h1 style={{padding:"10px"}} align="center">Client Detail</h1>
                      <hr style={{width:"100%",height:"2px",backgroundColor:"#000000ff"}} />
 
-                    <div style={{fontFamily:"monospace",display:"flex",flexDirection:"row",marginTop:"20px",margin:"10px"}}>
-                        
-                        <div style={{backgroundImage:`url(${truth})`,height:"520px",boxShadow:"8px 9px 8px #393938ff",borderRadius:"30px",width:"940px",border:"1px solid #9c9c9cff",backgroundColor:"#ffffffff",paddingLeft:"20px",opacity:"0.8",backgroundSize:"43% 47%",backgroundPosition:"center bottom",backgroundRepeat:"no-repeat"}}>
-                             <h3 style={{marginTop:"15x",fontFamily:"monospace",fontSize:"30px"}} align="center">INDIA</h3>
-                             <hr />
-                             <div style={{marginTop:"10px",right:"105px",borderRadius:"20px",width:"55px",backgroundColor:"#000000ff",marginLeft:"290px"}}>
-                                <h6 style={{height:"20px",alignContent:"center",color:"white"}} > <GoDotFill style={{color:"white",fontSize:"20px",marginBottom:"-8px"}}/>Active</h6>
+                    <div  style={{fontFamily:"monospace",display:"flex",flexDirection:"row",marginTop:"20px",margin:"10px"}}>
+
+                        <div className='card' style={{boxShadow:"8px 9px 8px #393938ff",display:"flex",flexDirection:"column",height:"520px",borderRadius:"50px",width:"380px",backgroundColor:"#F7F7F7",marginLeft:"10px"}}>
+
+                            <div style={{backgroundColor:"#000000ff",height:"60px",width:"100%",borderTopLeftRadius:"40px",borderTopRightRadius:"40px",color:"white",display:"flex",justifyContent:"center",alignItems:"center",fontFamily:"monospace"}}>
+                                <h2>INDIA LEGAL BOOK</h2>
                             </div>
-                            {/* name */}
+                            <hr />
+                             <div style={{border:"1px solid gray",backgroundColor:"black",color:"white",margin:"20px",borderRadius:"20px",height:"550px"}}>
+
+                            <div style={{ height: "245px", width: "380px" }}>
+
+                                <img src={legallogo} style={{ height: "340px", marginLeft: "4px",color:"white" }} alt="" />
+
+                            </div>
+                            <div style={{ marginTop: "90px", paddingLeft: "22px" }}>
+                                <h3 style={{textAlign:"center"}}>ISSUED UNDER MINISTRY OF LAW </h3>
+                                <h2 style={{textAlign:"center"}}> [2025-2050]</h2>
+
+                            </div> 
+
+                             </div>                           
+
+                           
+                            
+                        </div>
+                        <div className='card ' style={{backgroundImage:`url(${truth})`,height:"520px",boxShadow:"18px 13px 2px black",borderRadius:"30px",width:"600px",backgroundColor:"#ffffffff",paddingLeft:"20px",opacity:"0.8",backgroundSize:"29% 33%",backgroundPosition:"center bottom",backgroundRepeat:"no-repeat"}}>
+                        <div style={{height:"60px",width:"100%",color:"black",display:"flex",justifyContent:"center",alignItems:"center",fontFamily:"monospace"}}>
+                                <h2 style={{textAlign:"center",backgroundColor:"black",color:"white",width:"300px",borderRadius:"10px",padding:"5px"}} >REPUBLIC OF INDIA - 1947</h2>
+                            </div>                             <hr />
+                             <div style={{marginTop:"10px",right:"105px",borderRadius:"20px",width:"55px",backgroundColor:"#000000ff",marginLeft:"290px",display:"flex",flexDirection:"row"}}>
+                                <GoDotFill style={{paddingBottom:"5px",color:"white",fontSize:"20px",marginBottom:"-8px"}}/> 
+
+                                <span style={{height:"20px",alignContent:"center",color:"white",paddingRight:"2px"}} > Active </span>
+                            </div>
+
+
+
+
+                           <div style={{display:"flex",flexDirection:"row"}}>
+                            <div >
+                                 {/* name */}
                             <div style={{display:"flex",paddingLeft:"20px",paddingTop:"50px",flexDirection:"row",padding:"10px",marginTop:"35px"}}>
                                 <label htmlFor="">Name :</label>
                                 <div id="name"> <b>Shivanshu pal</b>
@@ -41,6 +89,15 @@ function Clientdetail()
                                 <div style={{marginLeft:"10px"}} id="gender"> <b>Male</b>
                                 </div>
                             </div>
+                            </div>
+                            <div  style={{marginLeft:"70px",marginTop:"10px"}}>
+                                   <div>
+
+                                      <img src={profilelogo} style={{height:"110px",width:"110px"}} alt="" />
+
+                                   </div>
+                            </div>
+                           </div>
 
                             {/*Address*/}
                             <div style={{display:"flex",paddingLeft:"20px",paddingTop:"50px",flexDirection:"row",padding:"10px"}
@@ -51,29 +108,17 @@ function Clientdetail()
                             </div>
 
 
-                            {/* type of Case */}
+                            {/* Active Case */}
 
                              <div style={{display:"flex",paddingLeft:"20px",paddingTop:"50px",flexDirection:"row",padding:"10px"}
                             }>
-                                <label htmlFor="">Type of case :</label>
+                                <label htmlFor="">Active case :</label>
                                 <div style={{marginLeft:"10px"}} id="casetype"> <b>Environmental Case </b>
                                 </div>
                             </div>
                         </div>
-                        <div style={{boxShadow:"8px 9px 8px #393938ff",display:"flex",flexDirection:"column",height:"520px",borderRadius:"50px",width:"600px",border:"1px solid #c3c3c3ff",backgroundColor:"#F7F7F7",marginLeft:"10px"}}>
-                            <div >
-                            <img src="https://c.pxhere.com/photos/da/49/face_facial_hair_fine_looking_guy_man_model_person_portrait-1563283.jpg!d" style={{height:"300px",width:"300px",borderRadius:"50px",margin:"20px"}}  id="image" alt="" />
-
-                            </div>
-                            
-                            <div style={{height:"200px",width:"300px",display:"flex",flexDirection:"row"}}>
-                                <img src={signature} style={{height:"180px",width:"200px",borderRadius:"50px",margin:"20px"}} alt="" />
-                                <img src={fingerprint} style={{height:"180px",width:"200px",borderRadius:"50px",marginLeft:"-100px"}} alt="" />
-                                <img src={verified} style={{height:"150px",width:"250px",marginLeft:"-190px"}} alt="" />
-
-                            </div>
-                        </div>
-                     </div>
+                        
+                    </div>
              </div>
         </>
     )

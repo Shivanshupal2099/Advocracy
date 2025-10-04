@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Landing from './pages/landing'
+import legallogo from './assets/legallogo.png'
 import Login from './pages/login'
 import Account from './pages/account'
 import Home from './pages/home'
@@ -25,17 +26,22 @@ import Inprogress from './component/inprogress'
 import Scheduled from './component/Scheduled'
 import Judgement from './component/Judgement'
 import Closed from './component/Closed'
+import Accountsection from './component/Accountsection'
 function App() {
 
 
 
   const Layout=()=>{
       return (
+
+        
+
         <div style={{display:"flex",flexDirection:"row"}}>
-          <div style={{height:"100vh",width:"290px",borderRadius:"30px",border:"1px solid #F7F7F7",backgroundColor:"#F7F7F7",position:"fixed"}}>
+         
+          <div style={{height:"80vh",width:"70px",borderRadius:"30px",border:"1px solid #F7F7F7",backgroundColor:"#F7F7F7",position:"fixed",marginTop:"85px"}}>
             <Sidebar/>
           </div>
-          <div style={{height:"100vh",marginLeft:'350px',width:"1100px",marginTop:"25px",borderRadius:"25px"}}>
+          <div style={{height:"100vh",marginLeft:'180px',width:"1100px",marginTop:"45px",borderRadius:"25px"}}>
             <Outlet/>
           </div>
         </div>
@@ -79,7 +85,9 @@ function App() {
                         <Route path='contactinfo' element={<Contactinfo/>}/>
                         <Route path='achievements' element={<Achievements/>}/>
                      </Route>
-                     <Route path='setting' element={<Setting/>}/>
+                     <Route path='setting' element={<Setting/>}>
+                        <Route index  element={<Accountsection/>}/>
+                     </Route>
                   </Route>
               </Routes>
       </BrowserRouter>

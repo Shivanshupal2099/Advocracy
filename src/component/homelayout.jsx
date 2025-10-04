@@ -12,7 +12,7 @@ function Homelayout() {
     return (
         <div style={{ display: "flex", flexDirection: "row" }}>
             <Homesidebar onClientSelect={handleClientSelect} />
-            <div style={{ flex: 1, padding: "20px" }}>
+            <div style={{ flex: 1, padding: "5px" }}>
                 {selectedClient ? (
                     <Client client={selectedClient} />
                 ) : (

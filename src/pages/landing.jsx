@@ -1,6 +1,7 @@
-import advocracy from '../assets/advocracy-logo.png'
+
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import legal from '../assets/legal.png'
 function Landing()
 {
      const navi = useNavigate();
@@ -31,8 +32,9 @@ function Landing()
 
                `}
             </style>
-            <div className="logobox" style={{height:'250px',width:'250px',marginTop:"230px",marginLeft:"650px"}}>
-                    <img src={advocracy} alt="Advocracy Logo" style={{height:"250px",width:"250px"}} />
+            <div className="logobox" style={{height:'250px',width:'250px',marginTop:"150px",marginLeft:"570px"}}>
+                    <img src={legal} alt="Advocracy Logo" style={{height:"450px",width:"450px"}} />
+                    <h1 style={{textAlign:"center",paddingLeft:"160px"}}>Adocracy </h1>
             </div>
         </>
     )

@@ -1,11 +1,11 @@
 .clientbox:hover {
     box-shadow: 3px 9px 1px #32FF21;
-    border: 1px solid #32FF21;
-    background-color: #FFEB00;
+    border: 4px solid #32FF21;
+    background-color: #f0f0f0;
 }
 .clientbox
 {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
 }
 
 
