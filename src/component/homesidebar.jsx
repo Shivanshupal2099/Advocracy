@@ -1,9 +1,12 @@
 import { IoIosAddCircle } from "react-icons/io";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Addclient from "./addclient";
 import './homesidebar.css';
 
-function Homesidebar({ onClientSelect }) {
+function Homesidebar() {
+
+    const navigate = useNavigate();
 
     const [addclient, setAddclient] = useState(false);
 
@@ -17,9 +20,7 @@ function Homesidebar({ onClientSelect }) {
     }, [userdata]);
 
     const handleClientClick = (client) => {
-        if (onClientSelect) {
-            onClientSelect(client);
-        }
+        navigate('client', { state: { client } });
     };
 
     const toggleAddClient = () => {
@@ -31,7 +32,7 @@ function Homesidebar({ onClientSelect }) {
 
 
 
-            {addclient && <Addclient setuserdata={setuserdata} />}
+            {addclient && <Addclient setuserdata={setuserdata} onClose={() => setAddclient(false)} />}
             <div style={{ height: "95vh", width: "340px", borderRadius: "10px", border: "1px solid #f1f1f1ff", backgroundColor: "#EDEDED", marginLeft: "-40px", display: "flex", flexDirection: "column" }}>
                 <div style={{position:"sticky"}}>
                     <h2 style={{ marginLeft: "20px", marginTop: "30px" }}>Clients Overview</h2>

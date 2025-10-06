@@ -5,7 +5,7 @@ function Client()
     return(
         <>
         <div style={{height:"60px",width:"750px",borderRadius:"50px",border:"1px solid #c4c4c4ff",backgroundColor:"#f0f0f0ff",marginLeft:"20px",display:"flex",flexDirection:"column"}}>
-            <Clientnav/>
+            <Clientnav />
         </div>
         </>
     );

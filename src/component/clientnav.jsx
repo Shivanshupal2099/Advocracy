@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 function Clientnav()
-{  
+{
     return(
 
         <>
@@ -15,7 +15,7 @@ function Clientnav()
                 }
                     .clientbutton
                     {
-                       
+
                        background-color:black;
                        color:white;
                        padding-top:15px;
@@ -55,7 +55,7 @@ function Clientnav()
                 <Outlet/>
                </div>
                </div>
-               
+
         </>
     )
 }

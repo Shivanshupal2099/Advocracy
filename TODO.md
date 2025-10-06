@@ -1,2 +1,11 @@
-- [x] Restructure JSX: Create flex container with sidebar and content area, move Outlet to content area.
-- [x] Update CSS: Improve navblock styles with hover, active, better colors, responsiveness.
+- [x] Fix photo upload in addclient.jsx: Update file input to create blob URL, include profilephoto in userdata, reset after add, make input clickable by using label
+- [x] Fix photo display in clientdetail.jsx: Add fallback to default profilelogo if no photo uploaded
+- Update routes in App.jsx to nest client sub-routes under 'client' path with Client as element
+- Modify Homelayout.jsx to use Outlet instead of conditional rendering
+- Update Homesidebar.jsx to navigate to 'client' route with client in state on click
+- Update Clientdetail.jsx to get client from location.state
+- Update Caseshistory.jsx to get client from location.state
+- Update Document.jsx to get client from location.state
+- Update Message.jsx to get client from location.state
+- Update Status.jsx to get client from location.state
+- Test the navigation and outlet rendering

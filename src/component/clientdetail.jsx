@@ -2,8 +2,18 @@ import truth from '../assets/truth.png'
 import { GoDotFill } from "react-icons/go";
 import legallogo from '../assets/legallogo.png'
 import profilelogo from '../assets/profilelogo.png'
+import { useLocation } from 'react-router-dom'
+import { RiDeleteBinLine } from "react-icons/ri";
+
 function Clientdetail()
 {
+    const location = useLocation();
+    const client = location.state?.client;
+
+    if (!client) {
+        return <div style={{textAlign:"center", marginTop:"50px"}}>Select a client to view details</div>;
+    }
+
     return(
 
 
@@ -24,7 +34,17 @@ function Clientdetail()
             }
           </style>
              <div style={{height:"700px",width:"810px",borderRadius:"30px",border:"1px solid #F7F7F7",backgroundColor:"#ffffffff",position:"fixed"}} >
-                     <h1 style={{padding:"10px"}} align="center">Client Detail</h1>
+                     <div style={{display:"flex",flexDirection:"row",backgroundColor:"#000000ff",height:"70px",color:"white",borderRadius:"30px 30px 0px 0px"}}>
+                       <div style={{marginLeft:"290px",marginTop:"10px",height:"50px",width:"195px"}}>
+                         <h1 style={{textAlign:"center"}}>Client Detail</h1>
+                       </div>
+
+                     <div style={{marginLeft:"150px",marginTop:"10px",width:"120px",height:"50px",textAlign:"center"}}>
+                        <button style={{border:"1px solid red",borderRadius:"10px",height:"40px",width:"120px",backgroundColor:"red",color:"white"}}>DELETE < RiDeleteBinLine/> </button>
+
+                     </div>
+                     </div>
+
                      <hr style={{width:"100%",height:"2px",backgroundColor:"#000000ff"}} />
 
                     <div  style={{fontFamily:"monospace",display:"flex",flexDirection:"row",marginTop:"20px",margin:"10px"}}>
@@ -71,14 +91,14 @@ function Clientdetail()
                                  {/* name */}
                             <div style={{display:"flex",paddingLeft:"20px",paddingTop:"50px",flexDirection:"row",padding:"10px",marginTop:"35px"}}>
                                 <label htmlFor="">Name :</label>
-                                <div id="name"> <b>Shivanshu pal</b>
+                                <div id="name"> <b>{client.name}</b>
                                 </div>
                             </div>
 
                             {/* Age */}
                             <div style={{display:"flex",paddingLeft:"20px",paddingTop:"50px",flexDirection:"row",padding:"10px"}}>
                                 <label htmlFor="">Age :</label>
-                                <div style={{marginLeft:"10px"}} id="firstname"> <b>06 <sup>th</sup>JUN 2005</b>
+                                <div style={{marginLeft:"10px"}} id="firstname"> <b>{client.dob}</b>
                                 </div>
                             </div>
 
@@ -86,14 +106,14 @@ function Clientdetail()
                             <div style={{display:"flex",paddingLeft:"20px",paddingTop:"50px",flexDirection:"row",padding:"10px"}
                             }>
                                 <label htmlFor="">Gender :</label>
-                                <div style={{marginLeft:"10px"}} id="gender"> <b>Male</b>
+                                <div style={{marginLeft:"10px"}} id="gender"> <b>{client.gender}</b>
                                 </div>
                             </div>
                             </div>
                             <div  style={{marginLeft:"70px",marginTop:"10px"}}>
                                    <div>
 
-                                      <img src={profilelogo} style={{height:"110px",width:"110px"}} alt="" />
+                                      <img src={client.profilephoto ? client.profilephoto : profilelogo} style={{height:"110px",width:"110px"}} alt="" />
 
                                    </div>
                             </div>
@@ -103,7 +123,7 @@ function Clientdetail()
                             <div style={{display:"flex",paddingLeft:"20px",paddingTop:"50px",flexDirection:"row",padding:"10px"}
                             }>
                                 <label htmlFor="">Address :</label>
-                                <div style={{marginLeft:"10px"}} id="address"> <b>162 Panki Kanpur ,UP,INDIA</b>
+                                <div style={{marginLeft:"10px"}} id="address"> <b>{client.address}</b>
                                 </div>
                             </div>
 
@@ -113,7 +133,7 @@ function Clientdetail()
                              <div style={{display:"flex",paddingLeft:"20px",paddingTop:"50px",flexDirection:"row",padding:"10px"}
                             }>
                                 <label htmlFor="">Active case :</label>
-                                <div style={{marginLeft:"10px"}} id="casetype"> <b>Environmental Case </b>
+                                <div style={{marginLeft:"10px"}} id="casetype"> <b>{client.casetype}</b>
                                 </div>
                             </div>
                         </div>

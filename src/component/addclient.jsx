@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import profilelogo from '../assets/profilelogo.png'
-function Addclient({ setuserdata })
+function Addclient({ setuserdata, onClose })
 {
 
   const [firstname,setfirstname]=useState("");
@@ -11,11 +11,15 @@ function Addclient({ setuserdata })
   const [dob,setdob]=useState('');
   const [phone,setphone]=useState('');
   const [address,setaddress]=useState('');
+  const [profilephoto,setprofilephoto]=useState(null);
 
 
-  const handledata=()=>{
+  const [dragUrl, setDragUrl] = useState("");
 
-    setuserdata(prev => [...prev, { id: Date.now(), name: `${firstname} ${lastname}`, firstname, lastname, casetype, gender, dob, phone, address }]);
+  const handledata=(e)=>{
+    e.preventDefault();
+    const photoToUse = dragUrl ? dragUrl : profilephoto;
+    setuserdata(prev => [...prev, { id: Date.now(), name: `${firstname} ${lastname} `, firstname, lastname, casetype, gender, dob, phone, address, profilephoto: photoToUse }]);
        setfirstname('');
        setlastname('');
        setcasetype('');
@@ -23,7 +27,23 @@ function Addclient({ setuserdata })
        setdob('');
        setphone('');
        setaddress('');
+       setprofilephoto(null);
+       setDragUrl("");
+       onClose();
   }
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    const url = e.dataTransfer.getData("text");
+    if (url && (url.startsWith("http://") || url.startsWith("https://"))) {
+      setDragUrl(url);
+      setprofilephoto(null);
+    }
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+  };
 
 
     return(
@@ -137,11 +157,11 @@ function Addclient({ setuserdata })
 
          <div  className="addclient">
           <div className="heading" style={{height:"70px",borderRadius:"10px 10px 0px 0px"}}>
-                        <h1 style={{textAlign:"center",paddingTop:"20px",marginTop:"0px",marginBottom:"10px"}}>Add client</h1>
+              <h1 style={{textAlign:"center",paddingTop:"20px",marginTop:"0px",marginBottom:"10px"}}>Add client</h1>
 
             </div>   
             <hr />
-            <form action=""  >
+            <form onSubmit={handledata} action=""  >
                <div id="name"  style={{display:"flex",flexDirection:"column"}}>
                    <div style={{display:"flex",flexDirection:"row"}}>
                     <div>
@@ -182,9 +202,9 @@ function Addclient({ setuserdata })
                           
                                     <div id="gender" style={{display:"flex",flexDirection:"row"}}>
                                       <label htmlFor="gender">Gender</label>
-                                        <input onChange={(e)=>setgender(e.target.value)} type="radio" name="gender" id="male" />
+                                        <input onChange={(e)=>setgender(e.target.value)} type="radio" value="male" name="gender" id="male" />
                                         <label htmlFor="male">Male</label>
-                                        <input onChange={(e)=>setgender(e.target.value)} type="radio" name="gender" id="female" />
+                                        <input onChange={(e)=>setgender(e.target.value)} type="radio" value="female" name="gender" id="female" />
                                         <label htmlFor="female">Female</label>
                                     </div>
 
@@ -205,13 +225,15 @@ function Addclient({ setuserdata })
                         </div>
                       <div style={{marginLeft:"200px",marginTop:"20px"}}>
 
-                            <div style={{ border: "7px solid black", height: "200px", width: "200px", borderRadius: "100px", backgroundImage: `url(${profilelogo})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                            
-                            </div>
+                            <label htmlFor="photoInput" onDrop={handleDrop} onDragOver={handleDragOver} style={{ border: "7px solid black", height: "200px", width: "200px", borderRadius: "100px", backgroundImage: `url(${dragUrl || profilephoto || profilelogo})`, backgroundSize: 'cover', backgroundPosition: 'center', display: 'inline-block', cursor: 'pointer' }}>
+
+                            </label>
+                              <input id="photoInput" onChange={(e)=>setprofilephoto(URL.createObjectURL(e.target.files[0]))} type="file" style={{display: 'none'}} />
+
                             <p style={{ marginTop: "9px",marginLeft:"20px" }}><b>Upload profile image</b></p>
 
-                            
-                             <button onClick={handledata} style={{height:"53px",width:"120px",borderRadius:"60px",backgroundColor:"#ffff4bff",color:"black",marginTop:"30px",position:"absolute",right:"180px",border:"4px solid black"}}>Add Client</button>
+
+                             <button type="submit" style={{height:"53px",width:"120px",borderRadius:"60px",backgroundColor:"#ffff4bff",color:"black",marginTop:"30px",position:"absolute",right:"180px",border:"4px solid black"}}>Add Client</button>
                  
                             
                           

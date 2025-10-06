@@ -1,32 +1,12 @@
-import { useState } from "react";
+import { Outlet } from "react-router-dom";
 import Homesidebar from "./homesidebar";
-import Client from "./client";
 
 function Homelayout() {
-    const [selectedClient, setSelectedClient] = useState(null);
-
-    const handleClientSelect = (client) => {
-        setSelectedClient(client);
-    };
-
     return (
         <div style={{ display: "flex", flexDirection: "row" }}>
-            <Homesidebar onClientSelect={handleClientSelect} />
+            <Homesidebar />
             <div style={{ flex: 1, padding: "5px" }}>
-                {selectedClient ? (
-                    <Client client={selectedClient} />
-                ) : (
-                    <div style={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        height: "100%",
-                        fontSize: "18px",
-                        color: "#666"
-                    }}>
-                        Select a client to view details
-                    </div>
-                )}
+                <Outlet />
             </div>
         </div>
     );

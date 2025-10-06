@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Landing from './pages/landing'
-import legallogo from './assets/legallogo.png'
+// import legallogo from './assets/legallogo.png'
 import Login from './pages/login'
 import Account from './pages/account'
 import Home from './pages/home'
@@ -16,6 +16,7 @@ import Achievements from './component/Achievements'
 import Casehistory from './component/CaseHistory'
 import Profilelayout from './component/profilelayout'
 import Homelayout from './component/homelayout'
+import Client from './component/client'
 import Clientdetail from './component/clientdetail'
 import Caseshistory from './component/caseshistory'
 import Document from './component/document'
@@ -62,16 +63,19 @@ function App() {
 
 
                      <Route path='homelayout' element={<Homelayout/>}>
-                          <Route index element={<Clientdetail/>}/>
-                          <Route path='caseshistory' element={<Caseshistory/>}/>
-                          <Route path='document' element={<Document/>}/>
-                          <Route path='message' element={<Message/>}/>
-                          <Route path='status' element={<Status/>}>
-                             <Route path='casefiled' element={<Casefiled/>}/>
-                             <Route path='inprogress' element={<Inprogress/>}/>
-                             <Route path='judgement' element={<Judgement/>}/>
-                             <Route path='scheduled' element={<Scheduled/>}/>
-                             <Route path='closed' element={<Closed/>}/>
+                          <Route index element={<div>Select a client to view details</div>} />
+                          <Route path='client' element={<Client />} >
+                            <Route index element={<Clientdetail />} />
+                            <Route path='caseshistory' element={<Caseshistory />} />
+                            <Route path='document' element={<Document />} />
+                            <Route path='message' element={<Message />} />
+                            <Route path='status' element={<Status />} >
+                              <Route path='casefiled' element={<Casefiled/>}/>
+                              <Route path='inprogress' element={<Inprogress/>}/>
+                              <Route path='judgement' element={<Judgement/>}/>
+                              <Route path='scheduled' element={<Scheduled/>}/>
+                              <Route path='closed' element={<Closed/>}/>
+                            </Route>
                           </Route>
                      </Route>
 
