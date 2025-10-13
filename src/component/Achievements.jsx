@@ -38,11 +38,13 @@ function Achievements()
             `
           }
          </style>
-            <div class="Achievementsid">
-              <div style={{display:"flex",flexDirection:"row"}}>
-                     <h1 style={{ textAlign:"center",paddingTop:"20px"}}>Achievements & Recognitions</h1>
+           <div style={{border:"1px solid white",backgroundColor:"#a7a8ff",height:"100vh",marginTop:"100px",borderRadius:"30px"}}>
+             <div class="Achievementsid" style={{borderTopLeftRadius:"20px",borderTopRightRadius:"20px",height:"80vh",overflow:"auto"}}>
+                <div style={{ textAlign:"center"}}>
+                         <h1 style={{padding:"20px",backgroundColor:"black",color:"white",borderRadius:"20px",border:"1px solid black"}}>Achievements & Recognitions</h1>
 
-                 {/*  add achievements */}
+                    </div>
+              <div style={{display:"flex",flexDirection:"row"}}>
                 <div>
                     <IoAddCircle onClick={()=>{setaddachievement(!addachievement)}} style={{height:"50px",width:"50px",display:"flex",flexDirection:"row-reverse",marginLeft:"450px",marginTop:"10px"}} />
                 </div>
@@ -73,25 +75,10 @@ function Achievements()
               </div>
 
 
-              <div class="awards">  
-                  
-                   <p style={{ backgroundColor:"#F7F7F7",width:"50%",padding:"30px",borderRadius:"10px"}}> 
-                    <div style={{display:"flex",flexDirection:"row"}}>
-                         <FaAward style={{height:"30px",width:"30px"}} />  <h3>Certified Specialist in Corporate Law</h3>
-                    </div>
-                     <br />Achieved specialist certification in corporate law by the State Bar, demonstrating advanced knowledge and experience.</p>
-              </div>
-
-              <div class="awards">  
-                  
-                   <p style={{ backgroundColor:"#F7F7F7",width:"50%",padding:"30px",borderRadius:"10px"}}> 
-                    <div style={{display:"flex",flexDirection:"row"}}>
-                         <FaAward style={{height:"30px",width:"30px"}} />  <h3>Leading Lawyer in Commercial Arbitration</h3>
-                    </div>
-                     <br />Acknowledged by Legal 500 for outstanding contributions and successful outcomes in commercial arbitration proceedings.</p>
-              </div>
+              
               
             </div>
+           </div>
         </>
     )
 }

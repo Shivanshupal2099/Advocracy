@@ -1,23 +1,18 @@
 import { IoIosAddCircle } from "react-icons/io";
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import Addclient from "./addclient";
 import './homesidebar.css';
 
-function Homesidebar() {
+function Homesidebar({ userdata, setuserdata }) {
 
     const navigate = useNavigate();
+    const location = useLocation();
 
     const [addclient, setAddclient] = useState(false);
 
-    const [userdata, setuserdata] = useState(() => {
-        const localdata = localStorage.getItem("userdata");
-        return localdata ? JSON.parse(localdata) : [];
-    });
-
-    useEffect(() => {
-        localStorage.setItem("userdata", JSON.stringify(userdata));
-    }, [userdata]);
+    // Remove duplicate declaration of location
+    // Use location from earlier declaration
 
     const handleClientClick = (client) => {
         navigate('client', { state: { client } });
@@ -81,24 +76,26 @@ function Homesidebar() {
                 <div style={{overflow:"auto"}}>
                     
 
-                { 
-                    userdata.map((items, index) => (
-                        <div className="clientbox"
-                            key={index}
-                            onClick={() => handleClientClick(items)}
-                            style={{
-                                display: "flex",
-                                flexDirection: "row",
-                                borderRadius: "12px",
-                                marginTop: "25px",
-                                marginLeft: "12px",
-                                marginRight: "5px",
-                                height: "80px",
-                                color:"black",
-                                width: "300px",
-                                cursor: "pointer",
-                            }}
-                        >
+                {
+                    userdata.map((items, index) => {
+                        const isActive = location.state?.client?.id === items.id;
+                        return (
+                            <div className={isActive ? "active" : "clientbox"}
+                                key={index}
+                                onClick={() => handleClientClick(items)}
+                                style={{
+                                    display: "flex",
+                                    flexDirection: "row",
+                                    borderRadius: "5px",
+                                    marginTop: "28px",
+                                    marginLeft: "12px",
+                                    marginRight: "5px",
+                                    height: "80px",
+                                    color:"black",
+                                    width: "300px",
+                                    cursor: "pointer",
+                                }}
+                            >
                             <div >
                             <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhY2h8ZW58MHx8MHx8&w=1000&q=80" style={{  marginTop: "10px", height: "60px", width: "60px", borderRadius: "90px", border: "1px solid gray",marginLeft:"10px" }} alt="clientimage" />
 
@@ -113,10 +110,11 @@ function Homesidebar() {
                                 <div style={{ boxShadow:"4px 7px 5px #2BFF29" ,marginTop:"25px",marginLeft:"18px",width:"0px",padding:"4px",borderRadius:"50px"}}></div>
 
                             </div>
-                            
-                            
+
+
                         </div>
-                    ))
+                        );
+                    })
                 }
                 </div>
             </div>

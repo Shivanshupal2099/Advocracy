@@ -25,7 +25,7 @@ function Settingnav()
                   }
                   .navblock {
                     padding: 15px 20px;
-                    background-color: #007bff;
+                    background-color: black;
                     color: white;
                     text-decoration: none;
                     border-radius: 10px;
@@ -34,11 +34,18 @@ function Settingnav()
                     font-weight: 500;
                   }
                   .navblock:hover {
-                    background-color: #0056b3;
+                    background-color: white;
+                       color: black;
                   }
                   .navblock.active {
-                    background-color: #003d82;
+                    background-color: black;
+                    border:0px solid white;
                   }
+                     .navblock.active:hover
+                     {
+                        background-color: white;
+                        color: black;
+                     }
                   .content {
                     flex: 1;
                     padding: 20px;
@@ -65,10 +72,10 @@ function Settingnav()
              <div className="sidebar">
                  <div className="nav-links">
                      <NavLink className={({ isActive }) => isActive ? "navblock active" : "navblock"} to=''>Account</NavLink>
-                     <NavLink className={({ isActive }) => isActive ? "navblock active" : "navblock"} to=''>Security and privacy</NavLink>
-                     <NavLink className={({ isActive }) => isActive ? "navblock active" : "navblock"} to=''>Notification</NavLink>
-                     <NavLink className={({ isActive }) => isActive ? "navblock active" : "navblock"} to=''>Language & Accessibility</NavLink>
-                     <NavLink className={({ isActive }) => isActive ? "navblock active" : "navblock"} to=''>Payment & Billing</NavLink>
+                     <NavLink className={({ isActive }) => isActive ? "navblock active" : "navblock"} to='securityandprivacy'>Security and privacy</NavLink>
+                     <NavLink className={({ isActive }) => isActive ? "navblock active" : "navblock"} to='notification'>Notification</NavLink>
+                     <NavLink className={({ isActive }) => isActive ? "navblock active" : "navblock"} to='languageandaccessibility'>Language & Accessibility</NavLink>
+                     <NavLink className={({ isActive }) => isActive ? "navblock active" : "navblock"} to='paymentandbilling'>Payment & Billing</NavLink>
                  </div>
              </div>
              <div className="content">

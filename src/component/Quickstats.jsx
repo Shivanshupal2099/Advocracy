@@ -65,110 +65,155 @@ function Quickstats()
 {
     const pieSize = { width: 200, height: 150 };
 
-    return(
-        <>
-
-        <div>
-            <h2 className="header" >Performance Metrics</h2>
-
-            <div style={{display:"flex",flexDirection:"row"}}>
-
-                <div className="box">
-                    <div className="header-box1">
-                        <h6>Total Cases Handled</h6>
-                        <h1>215</h1>
-                        Cumulative since joining
-                    </div>
-                    <div>
-                        <LineChart
-                            className="graph"
-                            xAxis={[{ data: [1, 2, 3, 5, 8, 10] }]}
-                            series={[
-                                {
-                                    data: [2, 5.5, 2, 8.5, 1.5, 5],
-                                    area: true,
-                                },
-                            ]}
-                            width={250}
-                            height={100}
-                        />
-                    </div>
-                </div>
-
-                <div className="box">
-                    <div className="header-box1">
-                        <h6> Cases Solved</h6>
-                        <h1>213</h1>
-                        <p>Successful outcomes</p>
-                        <PieChart
-                            id="piechart"
-                            series={[
-                                {
-                                    arcLabel: (item) => valueFormatter(item.value),
-                                    arcLabelMinAngle: 35,
-                                    arcLabelRadius: '60%',
-                                    data: desktopOS,
-                                },
-                            ]}
-                            sx={{
-                                [`& .${pieArcLabelClasses.root}`]: {
-                                    fontWeight: 'bold',
-                                },
-                            }}
-                            {...pieSize}
-                        />
-                    </div>
-                </div>
-
-                <div className="box">
-                    <div className="header-box1">
-                        <h6> Active Cases</h6>
-                        <h1>12</h1>
-                        <p>Currently ongoing</p>
-                        <ChartContainer
-                            className="chart"
-                            xAxis={[{ scaleType: 'band', data: ['A', 'B', 'C'] }]}
-                            series={[{ type: 'bar', id: 'base', data: [5, 17, 11] }]}
-                            height={110}
-                            yAxis={[{ width: 30 }]}
-                            margin={{ left: 0, right: 10 }}
-                        >
-                            <BarPlot barLabel="value" slots={{ barLabel: BarLabel }} />
-                            <ChartsXAxis />
-                            <ChartsYAxis />
-                        </ChartContainer>
-                    </div>
-                </div>
-
-                <div className="box">
-                  <div className="header-box1">
-                    <h6>Success Rate</h6>
-                    <h1>85%</h1>
-                    <p>Based on solved cases</p>
-                  </div>
-
-                   <PieChart class="pie"
-                      series={[
-                        {
-                          arcLabel: (item) => valueFormatter(item.value),
-                          arcLabelMinAngle: 35,
-                          arcLabelRadius: '60%',
-                          data: successData,
-                        },
-                      ]}
-                      sx={{
-                        [`& .${pieArcLabelClasses.root}`]: {
-                          fontWeight: 'bold',
-                        },
-                      }}
-                      {...size}
-                    />
-                </div>
-
+    return (
+      <>
+        <div
+          style={{
+            backgroundColor: "whitelime",
+            padding: "30px",
+            width: "1000px",
+            marginTop: "40px",
+            paddingTop: "10px",
+            borderRadius: "20px",
+            height: "100vh",
+          }}
+        >
+          <div style={{ textAlign: "center", margin: "20px" }}>
+            <h2
+              className="header"
+              style={{
+                marginLeft: "330px",
+                backgroundColor: "black",
+                color: "white",
+                padding: "10px",
+                width: "290px",
+                borderRadius: "10px",
+              }}
+            >
+              Performance Metrics
+            </h2>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              paddingLeft: "100px",
+              width: "900px",
+              height: "900px",
+              flexDirection: "column",
+              border: "1px solid #3091FF",
+              backgroundColor: "#C7E1FF",
+              borderRadius: "40px",
+              overflowY: "scroll",
+              msOverflowStyle: "none", // IE and Edge
+              scrollbarWidth: "none", // Firefox
+            }}
+            className="hide-scroll"
+          >
+            <style>
+              {`
+                .hide-scroll::-webkit-scrollbar {
+                  display: none;
+                }
+              `}
+            </style>
+            <div className="box" style={{ contentAlign: "center", justifyContent: "center" }}>
+              <div className="header-box1">
+                <h6>Total Cases Handled</h6>
+                <h1>215</h1>
+                Cumulative since joining
+              </div>
+              <div>
+                <LineChart
+                  className="graph"
+                  xAxis={[{ data: [1, 2, 3, 5, 8, 10] }]}
+                  series={[
+                    {
+                      data: [2, 5.5, 2, 8.5, 1.5, 5],
+                      area: true,
+                    },
+                  ]}
+                  width={350}
+                  height={300}
+                />
+              </div>
             </div>
+
+            <div className="box">
+              <div className="header-box1">
+                <h6> Cases Solved</h6>
+                <h1>213</h1>
+                <p>Successful outcomes</p>
+                <PieChart
+                  width={350}
+                  height={300}
+                  paddingBottom={20}
+                  id="piechart"
+                  series={[
+                    {
+                      arcLabel: (item) => valueFormatter(item.value),
+                      arcLabelMinAngle: 35,
+                      arcLabelRadius: "60%",
+                      data: desktopOS,
+                    },
+                  ]}
+                  sx={{
+                    [`& .${pieArcLabelClasses.root}`]: {
+                      fontWeight: "bold",
+                    },
+                  }}
+                  {...pieSize}
+                />
+              </div>
+            </div>
+
+            <div className="box">
+              <div className="header-box1">
+                <h6> Active Cases</h6>
+                <h1>12</h1>
+                <p>Currently ongoing</p>
+                <ChartContainer
+                  className="chart"
+                  xAxis={[{ scaleType: "band", data: ["A", "B", "C"] }]}
+                  series={[{ type: "bar", id: "base", data: [5, 17, 11] }]}
+                  height={220}
+                  yAxis={[{ width: 30 }]}
+                  margin={{ left: 0, right: 10 }}
+                >
+                  <BarPlot barLabel="value" slots={{ barLabel: BarLabel }} />
+                  <ChartsXAxis />
+                  <ChartsYAxis />
+                </ChartContainer>
+              </div>
+            </div>
+
+            <div className="box">
+              <div className="header-box1">
+                <h6>Success Rate</h6>
+                <h1>85%</h1>
+                <p>Based on solved cases</p>
+              </div>
+              <PieChart
+                className="pie"
+                series={[
+                  {
+                    arcLabel: (item) => valueFormatter(item.value),
+                    arcLabelMinAngle: 35,
+                    arcLabelRadius: "60%",
+                    data: successData,
+                  },
+                ]}
+                sx={{
+                  [`& .${pieArcLabelClasses.root}`]: {
+                    fontWeight: "bold",
+                  },
+                }}
+                {...size}
+              />
+            </div>
+          </div>
         </div>
-        </>
-    )
+      </>
+    );
 }
 
 export default Quickstats;

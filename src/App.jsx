@@ -28,6 +28,11 @@ import Scheduled from './component/Scheduled'
 import Judgement from './component/Judgement'
 import Closed from './component/Closed'
 import Accountsection from './component/Accountsection'
+import SecurityandPrivacy from './component/security&privacy'
+import Notification from './component/notification'
+import LanguageandAccessibility from './component/language&accessibility'
+import PaymentandBilling from './component/payment&billing'
+
 function App() {
 
 
@@ -91,6 +96,10 @@ function App() {
                      </Route>
                      <Route path='setting' element={<Setting/>}>
                         <Route index  element={<Accountsection/>}/>
+                        <Route path='securityandprivacy' element={<SecurityandPrivacy/>}/>
+                        <Route path='notification' element={<Notification/>}/>
+                        <Route path='languageandaccessibility' element={<LanguageandAccessibility/>}/>
+                        <Route path='paymentandbilling' element={<PaymentandBilling/>}/>
                      </Route>
                   </Route>
               </Routes>

@@ -2,13 +2,17 @@ import truth from '../assets/truth.png'
 import { GoDotFill } from "react-icons/go";
 import legallogo from '../assets/legallogo.png'
 import profilelogo from '../assets/profilelogo.png'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { RiDeleteBinLine } from "react-icons/ri";
+import { useContext } from 'react';
+import { ClientContext } from './ClientContext';
 
 function Clientdetail()
 {
     const location = useLocation();
     const client = location.state?.client;
+    const { deleteClient } = useContext(ClientContext);
+    const navigate = useNavigate();
 
     if (!client) {
         return <div style={{textAlign:"center", marginTop:"50px"}}>Select a client to view details</div>;
@@ -40,7 +44,7 @@ function Clientdetail()
                        </div>
 
                      <div style={{marginLeft:"150px",marginTop:"10px",width:"120px",height:"50px",textAlign:"center"}}>
-                        <button style={{border:"1px solid red",borderRadius:"10px",height:"40px",width:"120px",backgroundColor:"red",color:"white"}}>DELETE < RiDeleteBinLine/> </button>
+                        <button onClick={() => { deleteClient(client.id); navigate(-1); }} style={{border:"1px solid red",borderRadius:"10px",height:"40px",width:"120px",backgroundColor:"red",color:"white"}}>DELETE < RiDeleteBinLine/> </button>
 
                      </div>
                      </div>

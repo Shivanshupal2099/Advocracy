@@ -27,7 +27,7 @@ function Sidebar()
                 text-decoration:none;
                 height:55px;
                 width:60px;
-                border:2px solid #ffffffff;
+                border:1px solid gray;
                 display: flex;
                 align-items: center;
                 justify-content: center;

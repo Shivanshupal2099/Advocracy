@@ -149,8 +149,6 @@ function Addclient({ setuserdata, onClose })
                          {
                            margin-left:20px;
                          }
-                         
-                       
                 `
             }
         </style>
@@ -162,7 +160,7 @@ function Addclient({ setuserdata, onClose })
             </div>   
             <hr />
             <form onSubmit={handledata} action=""  >
-               <div id="name"  style={{display:"flex",flexDirection:"column"}}>
+               <div id="name"   style={{display:"flex",flexDirection:"column"}}>
                    <div style={{display:"flex",flexDirection:"row"}}>
                     <div>
                         <label htmlFor="fname">First Name</label>
